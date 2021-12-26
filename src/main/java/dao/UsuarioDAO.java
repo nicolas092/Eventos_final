@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import classes.Usuario;
+import util.Usuario;
 
 public class UsuarioDAO {
 	private EntityManager em;

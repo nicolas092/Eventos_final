@@ -9,7 +9,7 @@
 <title>Login</title>
 </head>
 <body>
-	<jsp:useBean id="usuarioBean" class="classes.Usuario" scope="request" />
+	<jsp:useBean id="usuarioBean" class="util.Usuario" scope="request" />
 	<jsp:setProperty name="usuarioBean" property="*" />
 	<c:if test="${ usuarioBean.autenticar() }">
 		<jsp:forward page="inicio.jsp" />

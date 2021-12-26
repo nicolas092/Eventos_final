@@ -1,9 +1,9 @@
 package teste;
 
-import classes.Usuario;
 import dao.EventoDAO;
 import dao.UsuarioDAO;
 import eventos.Evento;
+import util.Usuario;
 
 public class Testes {
 	public static void main(String[] args) {
