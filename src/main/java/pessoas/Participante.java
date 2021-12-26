@@ -9,6 +9,8 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 
+import dao.ParticipanteDAO;
+
 @Entity
 @PrimaryKeyJoinColumn(name = "ID_PARTICIPANTE", referencedColumnName = "ID_PESSOA") // referente a estretegia de heranca
 public class Participante extends Pessoa implements Serializable {
@@ -26,6 +28,12 @@ public class Participante extends Pessoa implements Serializable {
 
 	public Participante() {
 		super();
+	}
+
+	public Participante(String nome, String endereco, String cpf) {
+		super(nome);
+		this.endereco = endereco;
+		this.cpf = cpf;
 	}
 
 	public Participante(String nome, String endereco, String telefone, String cpf, List<String> emails) {
@@ -72,6 +80,30 @@ public class Participante extends Pessoa implements Serializable {
 	public String toString() {
 		return "nome = " + this.getNome() + ", endereco = " + endereco + ", telefone = " + telefone + ", cpf = " + cpf
 				+ ", email = " + emails;
+	}
+
+	public long persistir() {
+		return new ParticipanteDAO().persistir(this);
+	}
+
+	public boolean remover() {
+		return new ParticipanteDAO().remover(this.getId());
+	}
+
+	public boolean atualizar() {
+		return new ParticipanteDAO().atualizar(this);
+	}
+
+	public Pessoa buscarRegistroPorId(long id) {
+		return new ParticipanteDAO().buscarRegistroPorId(id);
+	}
+
+	public Pessoa pesquisarPeloNome(String nomeProcurado) {
+		return new ParticipanteDAO().pesquisarPeloNome(nomeProcurado);
+	}
+
+	public List<Participante> buscarTodosParticipantes() {
+		return new ParticipanteDAO().buscarTodos();
 	}
 
 }

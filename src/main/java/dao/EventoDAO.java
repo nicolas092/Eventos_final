@@ -48,12 +48,13 @@ public class EventoDAO {
 			TypedQuery<Evento> query = em.createQuery(jpql, Evento.class);
 			query.setParameter("nome", "%".concat(nomeProcurado.toLowerCase()).concat("%"));
 			List<Evento> eventos = query.getResultList();
-			if (eventos.size() == 0)
+			if (eventos.size() == 0) {
+				System.out.println("Nenhum evento localizado com nome \"" + nomeProcurado + "\"");
 				return null;
-			else if (eventos.size() == 1)
+			} else if (eventos.size() == 1)
 				return eventos.get(0);
 			else {
-				System.out.println("Localizado mais de um evento com esse nome");
+				System.out.println("Localizado mais de um evento com nome \"" + nomeProcurado + "\"");
 				return eventos.get(0);
 			}
 		} catch (Exception e) {
@@ -83,11 +84,13 @@ public class EventoDAO {
 			Evento evento = em.find(Evento.class, id);
 			if (evento != null) {
 				em.getTransaction().begin();
-				em.remove(em);
+				em.remove(evento);
 				em.getTransaction().commit();
 				return true;
-			} else
+			} else {
+				System.out.println("Evento com id " + id + " não encontrado na base de dados");
 				return false;
+			}
 		} catch (Exception e) {
 			if (em.getTransaction().isActive())
 				em.getTransaction().rollback();

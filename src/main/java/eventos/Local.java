@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import dao.LocalDAO;
+
 @Entity
 public class Local implements Serializable {
 
@@ -19,7 +21,7 @@ public class Local implements Serializable {
 	@Id
 	@Column(name = "ID_LOCAL")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long identificador;
+	private long id;
 	@Column(length = 50, nullable = false)
 	private String instituicao;
 	@Column(length = 14, nullable = false)
@@ -49,12 +51,12 @@ public class Local implements Serializable {
 		this.setEventos(eventos);
 	}
 
-	public Long getIdentificador() {
-		return identificador;
+	public long getId() {
+		return id;
 	}
 
-	public void setIdentificador(Long identificador) {
-		this.identificador = identificador;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getInstituicao() {
@@ -99,6 +101,30 @@ public class Local implements Serializable {
 		}
 		return "instituição = " + instituicao + ", telefone = " + telefone + ", organizador = " + organizador
 				+ ", eventos = " + eventos;
+	}
+
+	public long persistir() {
+		return new LocalDAO().persistir(this);
+	}
+
+	public boolean remover() {
+		return new LocalDAO().remover(this.getId());
+	}
+
+	public boolean atualizar() {
+		return new LocalDAO().atualizar(this);
+	}
+
+	public Local buscarRegistroPorId(long id) {
+		return new LocalDAO().buscarRegistroPorId(id);
+	}
+
+	public Local pesquisarPeloNome(String nomeProcurado) {
+		return new LocalDAO().pesquisarPeloNome(nomeProcurado);
+	}
+
+	public List<Local> buscarTodos() {
+		return new LocalDAO().buscarTodos();
 	}
 
 }

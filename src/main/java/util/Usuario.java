@@ -77,7 +77,8 @@ public class Usuario implements Serializable {
 		return new UsuarioDAO().remover(this.getId());
 	}
 
-	public Usuario buscarRegistroPorId() {
-		return new UsuarioDAO().buscarRegistroPorId(this.getId());
+	public Usuario buscarRegistroPorId(long id) {
+		return new UsuarioDAO().buscarRegistroPorId(id);
 	}
+
 }

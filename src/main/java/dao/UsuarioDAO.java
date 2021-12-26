@@ -34,7 +34,7 @@ public class UsuarioDAO {
 			em = JPAUtil.getEntityManager();
 			Usuario usuario = em.find(Usuario.class, id);
 			if (usuario == null) {
-				System.out.println("Id " + id + " não encontrado na base de dados");
+				System.out.println("Usuario com id " + id + " não encontrado na base de dados");
 				return false;
 			}
 			em.getTransaction().begin();

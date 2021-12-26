@@ -172,8 +172,8 @@ public class Evento implements Serializable {
 		return new EventoDAO().remover(this.getIdentificador());
 	}
 
-	public Evento buscarRegistroPorId() {
-		return new EventoDAO().buscarRegistroPorId(this.getIdentificador());
+	public Evento buscarRegistroPorId(long id) {
+		return new EventoDAO().buscarRegistroPorId(id);
 	}
 
 }
