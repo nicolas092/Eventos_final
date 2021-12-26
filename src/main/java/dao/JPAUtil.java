@@ -9,12 +9,12 @@ public class JPAUtil {
 
 	public static EntityManager getEntityManager() {
 		if (emf == null) {
-			emf = Persistence.createEntityManagerFactory("persistence-unit1");
+			emf = Persistence.createEntityManagerFactory("eventos");
 		}
 		return emf.createEntityManager();
 	}
 
-	public static void close() {
+	public static void fecharEntityManagerFactory() {
 		emf.close();
 	}
 }

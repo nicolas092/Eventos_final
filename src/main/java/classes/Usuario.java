@@ -1,18 +1,21 @@
 package classes;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import dao.UsuarioDAO;
+
 @Entity
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idUsuario;
+	private long id;
 	private String email;
 	private String senha;
 
@@ -30,6 +33,14 @@ public class Usuario implements Serializable {
 		return "Usuario [email=" + email + ", senha=" + senha + "]";
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+//	public void setId(Long id) { // em teoria nao deve ser possivel setar id
+//		this.id = id;
+//	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -46,28 +57,27 @@ public class Usuario implements Serializable {
 		this.senha = senha;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Pessoa [nome=" + nome + ", endereco=" + endereco + "]" + idPessoa;
-//	}
-//
-//	public boolean salvar() {
-//		return new PessoaDAO().salvar(this);
-//	}
-//
-//	public List<Pessoa> buscarTodos() {
-//		return new PessoaDAO().buscarTodos();
-//	}
-//
-//	public boolean atualizar() {
-//		return new PessoaDAO().atualizar(this);
-//	}
-//
-//	public boolean remover() {
-//		return new PessoaDAO().remover(this.getIdPessoa());
-//	}
-//
-//	public Pessoa buscarID() {
-//		return new PessoaDAO().buscarID(this.getIdPessoa());
-//	}
+	public boolean autenticar() {
+		return new UsuarioDAO().autenticar(this);
+	}
+
+	public long salvar() {
+		return new UsuarioDAO().salvar(this);
+	}
+
+	public List<Usuario> buscarTodos() {
+		return new UsuarioDAO().buscarTodos();
+	}
+
+	public boolean atualizar() {
+		return new UsuarioDAO().atualizar(this);
+	}
+
+	public boolean remover() {
+		return new UsuarioDAO().remover(this.getId());
+	}
+
+	public Usuario buscarRegistroPorId() {
+		return new UsuarioDAO().buscarRegistroPorId(this.getId());
+	}
 }

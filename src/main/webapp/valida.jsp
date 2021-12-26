@@ -12,7 +12,7 @@
 	<jsp:useBean id="usuarioBean" class="classes.Usuario" scope="request" />
 	<jsp:setProperty name="usuarioBean" property="*" />
 	<c:if test="${ usuarioBean.autenticar() }">
-		<jsp:forward page="" />
+		<jsp:forward page="inicio.jsp" />
 	</c:if>
 	<h1>
 		<c:out value="E-mail ou senha incorretos" />
