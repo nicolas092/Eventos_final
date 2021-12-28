@@ -4,17 +4,17 @@ import util.Usuario;
 
 public class Testes {
 	public static void main(String[] args) {
-		Usuario usuario = new Usuario("teste", "123456");
-		System.out.println(usuario.salvar());
-		usuario.setEmail("teste2");
-		System.out.println(usuario.autenticar());
-		
-		System.out.println(usuario.atualizar());
+//		Usuario usuario = new Usuario("teste", "123456");
+//		System.out.println(usuario.salvar());
+//		usuario.setEmail("teste2");
+//		System.out.println(usuario.autenticar());
+
+//		System.out.println(usuario.atualizar());
 //		usuario.buscarTodos().stream().forEach(System.out::println);
 //		System.out.println(usuario.buscarRegistroPorId(2));
-		
+
 //		System.out.println(usuario.remover());
-		usuario.buscarTodos().stream().forEach(System.out::println);
+//		usuario.buscarTodos().stream().forEach(System.out::println);
 
 		// evento, local, pessoa, participante
 

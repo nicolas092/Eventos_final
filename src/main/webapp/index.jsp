@@ -11,17 +11,13 @@
 <title>Login</title>
 </head>
 <body>
-	<jsp:useBean id='usuarioBean' class='util.Usuario' scope='request' />
-	<jsp:setProperty name='usuarioBean' property='*' />
-	<c:if test='${ usuarioBean.autenticar() }'>
-		<jsp:forward page='menu.jsp' />
-	</c:if>
-	<h1>
-		<c:out value='E-mail ou senha incorretos' />
-	</h1>
-	<jsp:include page='index.jsp'>
-		<jsp:param value='${ email }' name='email' />
-		<jsp:param value='${ senha }' name='senha' />
-	</jsp:include>
+	<form method="post" action="valida.jsp">
+		<label for="email">E-mail:</label> <br> <input type="email"
+			name="email" id="email" placeholder="Insira seu email nesse campo"
+			value=${ email }> <br> <label for="senha">Senha:</label>
+		<br> <input type="password" name="senha" id="senha"
+			placeholder="Insira sua senha nesse campo" value=${ senha }>
+		<br> <input type="submit" value="Autenticar">
+	</form>
 </body>
 </html>
