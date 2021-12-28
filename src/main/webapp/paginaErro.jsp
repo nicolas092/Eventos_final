@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isErrorPage="true"%>
+<c:set var="mensagemDeErro" value="<%=exception.getMessage()%>" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +10,15 @@
 <title>Erro</title>
 </head>
 <body>
-	<c:set var="mensagemDeErro" value="${ exception.getMessage() }" />
-	<c:set var="printStackTrace"
-		value="${ exception.printStackTrace(new java.io.PrintWriter(out)) }" />
-	<h1>Ocorreu o seguinte erro: ${ mensagemDeErro }</h1>
+	<h1>
+		Ocorreu o seguinte erro:
+		<c:out value="${ mensagemDeErro }" />
+	</h1>
 	<br>
-	<p>${ printStackTrace }</p>
+	<p>
+		<%
+		exception.printStackTrace(new java.io.PrintWriter(out));
+		%>
+	</p>
 </body>
 </html>
