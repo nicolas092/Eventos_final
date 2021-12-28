@@ -19,7 +19,7 @@
 				value="K24ri2LM@" />
 			<property
 				name="javax.persistence.schema-generation.database.action"
-				value="drop-and-create" /> <!-- none create drop-and-create drop -->
+				value="none" /> <!-- none create drop-and-create drop -->
 			<!-- <property name="eclipselink.logging.level" value="FINER" /> -->
 		</properties>
 	</persistence-unit>

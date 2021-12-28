@@ -9,6 +9,12 @@
 <title>Início</title>
 </head>
 <body>
-teste
+	<a href="cadastroParticipanteForm.jsp">Cadastrar participante</a>
+	<br>
+	<a href="listarParticipantes.jsp">Listar participantes</a>
+	<br>
+	<a href="editarParticipanteForm.jsp">Editar participante</a>
+	<br>
+	<a href="excluirParticipanteForm.jsp">Excluir participante</a>
 </body>
 </html>
