@@ -14,13 +14,13 @@
 		value="<%=participanteBean.buscarTodos()%>" />
 	<table border="5" style="border-collapse: collapse">
 		<tr>
-			<td>Nome</td>
-			<td>CPF</td>
-			<td>Telefone</td>
-			<td>E-mail</td>
-			<td>Endereço</td>
-			<td>Editar</td>
-			<td>Excluir</td>
+			<th>Nome</th>
+			<th>CPF</th>
+			<th>Telefone</th>
+			<th>E-mail</th>
+			<th>Endereço</th>
+			<th>Editar</th>
+			<th>Excluir</th>
 		</tr>
 		<c:forEach var="participante" items="${ listaDeParticipantes }">
 			<tr>
