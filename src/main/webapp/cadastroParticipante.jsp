@@ -6,8 +6,8 @@
 <%
 String email = request.getParameter("email");
 List<String> emails = Arrays.asList(email);
+request.setAttribute("emails", emails); // ou <c:set var="emails" value=<%=emails% /> 
 %>
-<c:set var="emails" value="<%=emails%>" />
 <!DOCTYPE html>
 <html>
 <head>
