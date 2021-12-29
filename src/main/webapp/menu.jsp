@@ -13,7 +13,7 @@
 	<br>
 	<a href="listarParticipantes.jsp">Listar participantes</a>
 	<br>
-	<a href="editarParticipanteForm.jsp">Editar participante</a>
+	<a href="editarParticipante1.jsp">Editar participante</a>
 	<br>
 	<a href="excluirParticipanteForm.jsp">Excluir participante</a>
 </body>

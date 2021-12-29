@@ -31,7 +31,7 @@
 				<td>${ email }</td>
 				<td>${ participante.getEndereco() }</td>
 				<td><a
-					href="editarParticipanteForm.jsp?id=${ participante.getId() }">Editar</a></td>
+					href="editarParticipante3.jsp?id=${ participante.getId() }">Editar</a></td>
 				<td><a
 					href="excluirParticipante.jsp?id=${ participante.getId() }">Excluir</a></td>
 			</tr>

@@ -94,12 +94,12 @@ public class Participante extends Pessoa implements Serializable {
 		return new ParticipanteDAO().atualizar(this);
 	}
 
-	public Pessoa buscarRegistroPorId(long id) {
+	public Participante buscarRegistroPorId(long id) {
 		return new ParticipanteDAO().buscarRegistroPorId(id);
 	}
 
-	public Pessoa pesquisarPeloNome(String nomeProcurado) {
-		return new ParticipanteDAO().pesquisarPeloNome(nomeProcurado);
+	public Participante pesquisarPeloNome() {
+		return new ParticipanteDAO().pesquisarPeloNome(this.getNome());
 	}
 
 	public List<Participante> buscarTodosParticipantes() {
