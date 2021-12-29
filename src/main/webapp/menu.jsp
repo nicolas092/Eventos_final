@@ -15,6 +15,6 @@
 	<br>
 	<a href="editarParticipante1.jsp">Editar participante</a>
 	<br>
-	<a href="excluirParticipanteForm.jsp">Excluir participante</a>
+	<a href="excluirParticipante1.jsp">Excluir participante</a>
 </body>
 </html>

@@ -33,7 +33,7 @@
 				<td><a
 					href="editarParticipante3.jsp?id=${ participante.getId() }">Editar</a></td>
 				<td><a
-					href="excluirParticipante.jsp?id=${ participante.getId() }">Excluir</a></td>
+					href="excluirParticipante3.jsp?id=${ participante.getId() }">Excluir</a></td>
 			</tr>
 		</c:forEach>
 	</table>
