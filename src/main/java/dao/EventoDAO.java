@@ -32,7 +32,7 @@ public class EventoDAO {
 			em.getTransaction().begin();
 			em.persist(evento);
 			em.getTransaction().commit();
-			return evento.getIdentificador();
+			return evento.getId();
 		} catch (Exception e) {
 			if (em.getTransaction().isActive())
 				em.getTransaction().rollback();

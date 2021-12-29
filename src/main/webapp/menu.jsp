@@ -16,5 +16,7 @@
 	<a href="editarParticipante1.jsp">Editar participante</a>
 	<br>
 	<a href="excluirParticipante1.jsp">Excluir participante</a>
+	<br>
+	<a href="listarEventos.jsp">Listar eventos</a>
 </body>
 </html>

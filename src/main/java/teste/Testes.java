@@ -1,6 +1,10 @@
 package teste;
 
-import util.Usuario;
+import java.time.LocalDateTime;
+
+import eventos.Evento;
+import eventos.Local;
+import util.Situacao;
 
 public class Testes {
 	public static void main(String[] args) {
@@ -18,6 +22,21 @@ public class Testes {
 
 		// evento, local, pessoa, participante
 
+		Local local = new Local();
+		local.setInstituicao("IFRS");
+		local.setTelefone("51986569754");
+		local.setOrganizador("Nícolas");
+		System.out.println(local.persistir());
+		
+		Evento evento = new Evento();
+		evento.setNome("Churrasco");
+		evento.setTaxaInscricao(25.3);
+		evento.setData(LocalDateTime.of(2022, 1, 22, 12, 30));
+		evento.setSituacao(Situacao.ANDAMENTO);
+		evento.setLocal(local);
+		System.out.println(evento.persistir());
+		
+		
 //		Participante participante = new Participante("Nícolas", "av. liberdade", "04836108012");
 //		System.out.println(participante.persistir()); // 1
 //		participante.setNome("Nícolas Alterado");

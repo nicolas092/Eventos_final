@@ -27,7 +27,7 @@ public class Evento implements Serializable {
 	@Id
 	@Column(name = "ID_EVENTO")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long identificador;
+	private long id;
 	@Column(length = 50, nullable = false)
 	private String nome;
 	@Column(nullable = false)
@@ -75,12 +75,12 @@ public class Evento implements Serializable {
 			return false;
 	}
 
-	public long getIdentificador() {
-		return identificador;
+	public long getId() {
+		return id;
 	}
 
-	public void setIdentificador(long identificador) {
-		this.identificador = identificador;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -169,7 +169,7 @@ public class Evento implements Serializable {
 	}
 
 	public boolean remover() {
-		return new EventoDAO().remover(this.getIdentificador());
+		return new EventoDAO().remover(this.getId());
 	}
 
 	public Evento buscarRegistroPorId(long id) {
