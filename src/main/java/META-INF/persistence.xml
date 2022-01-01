@@ -10,16 +10,12 @@
 		<class>pessoas.Participante</class>
 		<class>pessoas.Pessoa</class>
 		<properties>
-			<property name="javax.persistence.jdbc.driver"
-				value="com.mysql.cj.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/eventos" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"	value="jdbc:mysql://localhost:3306/eventos" />
 			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password"
-				value="" />
+			<property name="javax.persistence.jdbc.password" value="" />
 			<property
-				name="javax.persistence.schema-generation.database.action"
-				value="none" /> <!-- none create drop-and-create drop -->
+				name="javax.persistence.schema-generation.database.action" value="none" /> <!-- none create drop-and-create drop -->
 			<!-- <property name="eclipselink.logging.level" value="FINER" /> -->
 		</properties>
 	</persistence-unit>
