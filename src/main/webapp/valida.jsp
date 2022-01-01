@@ -16,9 +16,7 @@
 	<c:if test='${ usuarioBean.autenticar() }'>
 		<jsp:forward page='menu.jsp' />
 	</c:if>
-	<h1>
-		<c:out value='E-mail ou senha incorretos' />
-	</h1>
+	<p style="color:white">E-mail e/ou senha incorretos</p>
 	<jsp:include page='index.jsp'>
 		<jsp:param value='${ email }' name='email' />
 		<jsp:param value='${ senha }' name='senha' />

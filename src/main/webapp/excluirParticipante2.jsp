@@ -19,7 +19,7 @@
 		%>
 		<jsp:forward page="excluirParticipante3.jsp" />
 	</c:if>
-	<p>Nome de participante não encontrado</p>
+	<p style="color:white">Nome de participante não encontrado</p>
 	<jsp:include page="excluirParticipante1.jsp" />
 </body>
 </html>
