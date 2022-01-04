@@ -1,11 +1,10 @@
 package eventos;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -33,23 +32,22 @@ public class Evento implements Serializable {
 	@Column(nullable = false)
 	private double taxaInscricao;
 
-	private LocalDateTime data;
+	private ZonedDateTime data;
 
 	@Enumerated(EnumType.ORDINAL)
 	private Situacao situacao;
 
-	@OneToMany // (cascade = CascadeType.PERSIST) comentado pois os registros já foram
-				// inseridos manualmente
+	@OneToMany //(cascade = CascadeType.PERSIST) comentado pois os registros já foram inseridos manualmente
 	private List<Participante> participantes = new ArrayList<>();
 
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne //(cascade = CascadeType.PERSIST)
 	private Local local;
 
 	public Evento() {
 		super();
 	}
 
-	public Evento(String nome, double taxaInscricao, LocalDateTime data, Situacao situacao) {
+	public Evento(String nome, double taxaInscricao, ZonedDateTime data, Situacao situacao) {
 		super();
 		this.nome = nome;
 		this.taxaInscricao = taxaInscricao;
@@ -57,7 +55,7 @@ public class Evento implements Serializable {
 		this.situacao = situacao;
 	}
 
-	public Evento(String nome, double taxaInscricao, LocalDateTime data, Situacao situacao,
+	public Evento(String nome, double taxaInscricao, ZonedDateTime data, Situacao situacao,
 			List<Participante> participantes, Local local) {
 		super();
 		this.nome = nome;
@@ -99,11 +97,11 @@ public class Evento implements Serializable {
 		this.taxaInscricao = taxaInscricao;
 	}
 
-	public LocalDateTime getData() {
+	public ZonedDateTime getData() {
 		return data;
 	}
 
-	public void setData(LocalDateTime data) {
+	public void setData(ZonedDateTime data) {
 		this.data = data;
 	}
 
